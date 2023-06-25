@@ -1,4 +1,5 @@
 require("config.keybinds")
+vim.cmd([[set shell=/bin/zsh]])
 vim.cmd([[set termguicolors]])
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
