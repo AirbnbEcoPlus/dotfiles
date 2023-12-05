@@ -1,8 +1,8 @@
 return {
 	{
-		"navarasu/onedark.nvim",
+		"sainnhe/sonokai",
 		config = function()
-			vim.cmd([[colorscheme onedark]])
+			vim.cmd([[colorscheme sonokai]])
 		end,
 	},
 	{

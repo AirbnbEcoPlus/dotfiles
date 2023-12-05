@@ -20,8 +20,9 @@ return {
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "mfussenegger/nvim-dap" },
 	{ "rcarriga/nvim-dap-ui" },
-	{ "jay-babu/mason-nvim-dap.nvim" },
 	{ "L3MON4D3/LuaSnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "jay-babu/mason-null-ls.nvim" },
 }
+
+
