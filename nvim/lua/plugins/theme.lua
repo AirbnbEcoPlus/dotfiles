@@ -1,10 +1,11 @@
 return {
 	{
-		"sainnhe/sonokai",
+		"rockyzhang24/arctic.nvim",
 		config = function()
-			vim.cmd([[colorscheme sonokai]])
+			vim.cmd([[colorscheme arctic]])
 		end,
 	},
+    {"rktjmp/lush.nvim"},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",

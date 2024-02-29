@@ -29,9 +29,9 @@ cmp.setup({
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
-		}),
+		}), 
 	}),
-	sources = { { name = "nvim_lsp" }, { name = "luasnip" } },
+	sources = { { name = "nvim_lsp" }, { name = "luasnip" },  { name = 'vsnip', keyword_length = 2 }, { name = 'path' }, { name = 'buffer', keyword_length = 2 }},
 })
 
 local null_ls = require("null-ls")

@@ -66,10 +66,11 @@ return {
 
     { "folke/trouble.nvim" },
     {
-        "feline-nvim/feline.nvim",
-        branch = "0.5-compat",
+        "nvim-lualine/lualine.nvim",
         config = function()
-            require("feline").setup({})
+            require('lualine').setup {
+                options = { theme = 'codedark' }
+            }
         end,
     },
     {
