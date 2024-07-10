@@ -18,8 +18,9 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu tofi-drun --drun-launch=true
 
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -205,25 +206,21 @@ bindsym $mod+r mode "resize"
 #Graphics
 
 
-seat * xcursor_theme Vimix-White 12
 xwayland enable
-output eDP-1 scale 1.75
 
 default_border none
 default_floating_border none
-font pango:monospace 0
 titlebar_padding 1
 titlebar_border_thickness 0
 
 
-
 #Volume and Brightness
-bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
-bindsym XF86AudioLowerVolume exec amixer set Master 2%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 4%+
+bindsym XF86AudioLowerVolume exec amixer set Master 4%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
-bindsym XF86MonBrightnessUp exec brightnessctl s 100+
-bindsym XF86MonBrightnessDown exec brightnessctl s 100-
+bindsym XF86MonBrightnessUp exec brightnessctl s 10+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10-
 
 
 
