@@ -19,10 +19,10 @@
     "height": 40,
 
     "modules-left": [
-        "sway/workspaces",
+        "hyprland/workspaces",
     ],
     "modules-center": [
-        "sway/window",
+        "hyprland/window",
     ],
     "modules-right": [
         "network",
@@ -95,7 +95,7 @@
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "all-outputs": false,
         "disable-scroll": true,
         "format": "{icon} {name}",
