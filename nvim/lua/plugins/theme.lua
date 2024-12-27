@@ -15,7 +15,7 @@ return {
 					enable = true,
 					additional_vim_regex_highlighting = false,
 				},
-				rainbow = {
+                rainbow = {
 					enable = true,
 					extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
 					max_file_lines = nil, -- Do not enable for files with more than n lines, int
@@ -23,5 +23,18 @@ return {
 			})
 		end,
 	},
-	{ "lukas-reineke/indent-blankline.nvim" },
+    {
+  "shellRaining/hlchunk.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    require("hlchunk").setup({
+
+        
+    indent = {
+        enable = true
+    },
+    
+    })
+  end
+},
 }

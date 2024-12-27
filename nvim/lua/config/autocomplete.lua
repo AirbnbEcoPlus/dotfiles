@@ -4,14 +4,7 @@ local lsp_attach = function(client, bufnr)
 end
 
 local lspconfig = require("lspconfig")
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup({
-			on_attach = lsp_attach,
-			capabilities = lsp_capabilities,
-		})
-	end,
-})
+
 
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -31,14 +24,33 @@ cmp.setup({
 			select = true,
 		}), 
 	}),
-	sources = { { name = "nvim_lsp" }, { name = "luasnip" },  { name = 'vsnip', keyword_length = 2 }, { name = 'path' }, { name = 'buffer', keyword_length = 2 }},
+	sources = { { name = "nvim_lsp" }, { name = "luasnip" },  { name = 'path' }, { name = 'buffer', keyword_length = 2 }},
 })
 
-local null_ls = require("null-ls")
-require("mason-null-ls").setup({
-	automatic_installation = false,
-	handlers = {},
+
+require("mason").setup({
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+    },
 })
+
+require("mason-lspconfig").setup()
+
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		lspconfig[server_name].setup({
+			on_attach = lsp_attach,
+			capabilities = lsp_capabilities,
+		})
+	end,
+})
+
+
+local null_ls = require("null-ls")
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.prettierd,
