@@ -10,12 +10,17 @@ return {
         keys = {
             {
                 "<leader>e",
-                ":NeoTreeShow<CR>",
+                ":Neotree<CR>",
                 desc = "Explorer NeoTree",
                 remap = true,
             },
         },
-        branch = "v2.x",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        }
     },
     {
         "akinsho/toggleterm.nvim",

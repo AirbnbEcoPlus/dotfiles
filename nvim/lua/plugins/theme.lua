@@ -1,8 +1,11 @@
 return {
 	{
-		"rockyzhang24/arctic.nvim",
+		"navarasu/onedark.nvim",
 		config = function()
-			vim.cmd([[colorscheme arctic]])
+            require('onedark').setup {
+                style = 'darker'
+            } 
+			vim.cmd([[colorscheme onedark]])
 		end,
 	},
     {"rktjmp/lush.nvim"},
@@ -23,18 +26,4 @@ return {
 			})
 		end,
 	},
-    {
-  "shellRaining/hlchunk.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    require("hlchunk").setup({
-
-        
-    indent = {
-        enable = true
-    },
-    
-    })
-  end
-},
 }
