@@ -7,6 +7,7 @@ return {
     },
     {
         "nvim-neo-tree/neo-tree.nvim",
+
         keys = {
             {
                 "<leader>e",
@@ -69,7 +70,18 @@ return {
     },
     { "kdheepak/lazygit.nvim" }, -- AutoCompletion, Syntax, linter & formatter
 
-    { "folke/trouble.nvim" },
+    {
+        "folke/trouble.nvim",
+        cmd = "Trouble",
+        opts = {},
+        keys = {
+            {
+                "<leader>xx",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)",
+            },
+        },
+    },
     {
         "nvim-lualine/lualine.nvim",
         config = function()

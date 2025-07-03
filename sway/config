@@ -22,6 +22,7 @@ set $menu tofi-drun --drun-launch=true
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 ### Output configuration
+exec quickshell 
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/krfcm2/.config/sway/bg/858608.jpg fill 
@@ -215,9 +216,9 @@ titlebar_border_thickness 0
 
 
 #Volume and Brightness
-bindsym XF86AudioRaiseVolume exec amixer set Master 4%+
-bindsym XF86AudioLowerVolume exec amixer set Master 4%-
-bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 3%+  
+bindsym XF86AudioLowerVolume exec wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 3%- 
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle 
 
 bindsym XF86MonBrightnessUp exec brightnessctl s 10+
 bindsym XF86MonBrightnessDown exec brightnessctl s 10-
@@ -228,10 +229,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10-
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
 
-    swaybar_command waybar
-}
-
-
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
 include /etc/sway/config.d/*

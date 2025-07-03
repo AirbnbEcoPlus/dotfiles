@@ -20,7 +20,6 @@ vim.cmd([[set tabstop=4]])
 vim.cmd([[set expandtab]])
 vim.cmd([[set smartindent]])
 
-map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Open Trouble" })
 
 map("n", "<", "<cmd>HopWord<cr>", { desc = "Start Hop" })
 
