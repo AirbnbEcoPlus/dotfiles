@@ -16,7 +16,7 @@
     "position": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 40,
+    "height": 30,
 
     "modules-left": [
         "hyprland/workspaces",
@@ -98,7 +98,7 @@
     "hyprland/workspaces": {
         "all-outputs": false,
         "disable-scroll": true,
-        "format": "{icon} {name}",
+        "format": "{icon}  {name}",
         "format-icons": {
             "urgent": "",
             "focused": "",
