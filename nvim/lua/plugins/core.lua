@@ -24,6 +24,18 @@ return {
         }
     },
     {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
+        build = ":TSUpdate",
+
+        opts = {
+            highlight = {
+                enable = true,
+            },
+        },
+    },
+    {
         "akinsho/toggleterm.nvim",
         version = "*",
         config = true,
@@ -53,7 +65,6 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.4",
     },
     {
         "echasnovski/mini.pairs",
@@ -62,14 +73,34 @@ return {
             require("mini.pairs").setup(opts)
         end,
     },
+    { "kdheepak/lazygit.nvim" },
     {
-        "ahmedkhalf/project.nvim",
-        config = function()
-            require("project_nvim").setup({})
-        end,
+        "saghen/blink.cmp",
+        version = "*",
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+        },
+        opts = {
+            keymap = {
+                preset = "default",
+                ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<CR>'] = { 'accept', 'fallback' },
+            },
+            completion = {
+                list = {
+                    selection = { preselect = true, auto_insert = true },
+                },
+            },
+            appearance = {
+                use_nvim_cmp_as_default = true,
+                nerd_font_variant = "mono"
+            },
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
+            },
+            signature = { enabled = true }
+        },
     },
-    { "kdheepak/lazygit.nvim" }, -- AutoCompletion, Syntax, linter & formatter
-
     {
         "folke/trouble.nvim",
         cmd = "Trouble",
@@ -90,25 +121,7 @@ return {
             }
         end,
     },
-    {
-        "crnvl96/lazydocker.nvim",
-        event = "VeryLazy",
-        opts = {}, -- automatically calls `require("lazydocker").setup()`
-    },
-    { "nvim-pack/nvim-spectre" },
-    {
-        "terrortylor/nvim-comment",
-        config = function()
-            require("nvim_comment").setup({})
-        end,
-    },
-    {
-        "phaazon/hop.nvim",
-        branch = "v2",
-        config = function()
-            require("hop").setup({ keys = "azerqsdfwxc" })
-        end,
-    },
+
     { "romgrk/barbar.nvim" },
     {
         "iamcco/markdown-preview.nvim",

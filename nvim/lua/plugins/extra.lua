@@ -25,24 +25,9 @@ return {
     },
     { "alec-gibson/nvim-tetris" },
     {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        -- tag = "*",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
-                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = { -- Manages Neorg workspaces
-                        config = {
-                            workspaces = {
-                                work = "~/Documents/vault",
-                            },
-                        },
-                    },
-                },
-            }
-        end,
+        "crnvl96/lazydocker.nvim",
+        event = "VeryLazy",
+        opts = {}, -- automatically calls `require("lazydocker").setup()`
     },
+
 }
